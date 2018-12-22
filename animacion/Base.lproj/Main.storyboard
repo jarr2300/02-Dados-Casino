@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cube" translatesAutoresizingMaskIntoConstraints="NO" id="uuD-Z2-MYA">
-                                <rect key="frame" x="-134" y="20" width="643" height="647"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cube" translatesAutoresizingMaskIntoConstraints="NO" id="uuD-Z2-MYA">
+                                <rect key="frame" x="-134" y="0.0" width="643" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CasinoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pZe-gh-aAw">
                                 <rect key="frame" x="76" y="90" width="223" height="200"/>
@@ -29,25 +29,64 @@
                                     <constraint firstAttribute="height" constant="200" id="TYs-Ls-wMV"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="iW7-Hm-ywh">
+                                <rect key="frame" x="125" y="390" width="125" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="Tgf-S1-J9P">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="262-9y-F7o"/>
+                                            <constraint firstAttribute="width" constant="50" id="gLH-xk-0XB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-WA-rfR">
+                                        <rect key="frame" x="75" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eGQ-Qz-X2l"/>
+                                            <constraint firstAttribute="width" constant="50" id="ykW-50-lfu"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY3-nX-cXA">
+                                <rect key="frame" x="103.5" y="555" width="168" height="47"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                <state key="normal" title="Tira los dados">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="diceShake:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q46-6B-wzy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pZe-gh-aAw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="0Fq-Ol-aWE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cY3-nX-cXA" secondAttribute="bottom" constant="65" id="0XG-XR-jK6"/>
                             <constraint firstItem="uuD-Z2-MYA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4fE-Wk-TNu"/>
                             <constraint firstItem="uuD-Z2-MYA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BUc-39-xPX"/>
                             <constraint firstItem="pZe-gh-aAw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oov-fa-Hmh"/>
+                            <constraint firstItem="iW7-Hm-ywh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R0x-v3-BVo"/>
                             <constraint firstItem="uuD-Z2-MYA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W33-ps-TWk"/>
+                            <constraint firstItem="cY3-nX-cXA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g3h-5a-2Wm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uuD-Z2-MYA" secondAttribute="bottom" id="w9P-u4-We4"/>
+                            <constraint firstItem="iW7-Hm-ywh" firstAttribute="top" secondItem="pZe-gh-aAw" secondAttribute="bottom" constant="100" id="xEx-IC-5Id"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="dadoDinamico" destination="Tgf-S1-J9P" id="7xW-9b-IJK"/>
+                        <outlet property="dadoDinamico2" destination="rbT-WA-rfR" id="I75-wq-7z6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="27.436281859070466"/>
         </scene>
     </scenes>
     <resources>
         <image name="CasinoLogo" width="143" height="109"/>
         <image name="cube" width="643" height="424"/>
+        <image name="dice1" width="428" height="428"/>
     </resources>
 </document>

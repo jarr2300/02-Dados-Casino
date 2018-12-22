@@ -16,10 +16,12 @@ class ViewController: UIViewController {
     
     //   @IBOutlet weak var ryuImageView: UIImageView!
     
+    @IBOutlet weak var dadoDinamico: UIImageView!
     
-    var randomDiceIndexLeft : Int = 0
-    var randomDiceIndexRight: Int = 0
-    // var ryuImages: [UIImage] = []
+    @IBOutlet weak var dadoDinamico2: UIImageView!
+    //var randomDiceIndexLeft : Int = 0
+    //var randomDiceIndexRight: Int = 0
+    var diceImages: [UIImage] = []
     
     
     //let diceImages = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
@@ -30,16 +32,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // ryuImages = createImageArray(total: 7, imagePrefix: "dice")
+        diceImages = createImageArray(total: 6, imagePrefix: "dice")
         // generateRandomDices()
     }
-    /*
-     func createImageArray(total: Int, imagePrefix: String) -> [UIImage] {
+    
+    func createImageArray(total: Int, imagePrefix: String) -> [UIImage] {
      
      var imageArray: [UIImage] = []
      
      for imageCount in 0..<total {
-     let imageName = "\(imagePrefix)\(imageCount).png"
+     let imageName = "\(imagePrefix)\(imageCount+1)"
      let image = UIImage(named: imageName)!
      imageArray.append(image)
      }
@@ -49,27 +51,32 @@ class ViewController: UIViewController {
      // Can be refactored to an extension on UIImage
      func animate(imageView: UIImageView, images: [UIImage]) {
      imageView.animationImages = images
-     imageView.animationDuration = 1.0
+     imageView.animationDuration = 2.0
      imageView.animationRepeatCount = 1
      imageView.startAnimating()
      }
      
-     func shoryukenButtonTapped() {
-     animate(imageView: ryuImageView, images: ryuImages)}
+     //func shoryukenButtonTapped() {
+     //animate(imageView: dadoDinamico, images: diceImages)}
      
-     
-     //  @IBAction func rollPressed(_ sender: UIButton) {
+    
+    
+    @IBAction func diceShake(_ sender: UIButton) {
+        animate(imageView: dadoDinamico, images: diceImages)
+        animate(imageView: dadoDinamico2, images: diceImages)
+    }
+    
+     // @IBAction func rollPressed(_ sender: UIButton) {
      //  generateRandomDices()
-     // shoryukenButtonTapped()
-     }
+    //shoryukenButtonTapped()}
+    
      
-     func generateRandomDices(){
+     /*func generateRandomDices(){
      
      randomDiceIndexLeft = Int.random(in: 1..<(7))
      randomDiceIndexRight = Int.random(in: 1..<(7))
      imageViewDiceLeft.image = UIImage ( named: "dice\(randomDiceIndexLeft)")
      imageViewDiceRight.image = UIImage ( named: "dice\(randomDiceIndexRight)")
-     
-     }
-     */
+     }*/
 }
+
