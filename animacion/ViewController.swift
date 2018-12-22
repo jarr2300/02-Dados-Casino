@@ -19,8 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var dadoDinamico: UIImageView!
     
     @IBOutlet weak var dadoDinamico2: UIImageView!
-    //var randomDiceIndexLeft : Int = 0
-    //var randomDiceIndexRight: Int = 0
+    
+    var randomDiceIndexLeft : Int = 0
+    var randomDiceIndexRight: Int = 0
     var diceImages: [UIImage] = []
     
     
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         diceImages = createImageArray(total: 6, imagePrefix: "dice")
-        // generateRandomDices()
+        generateRandomDices()
     }
     
     func createImageArray(total: Int, imagePrefix: String) -> [UIImage] {
@@ -51,32 +52,31 @@ class ViewController: UIViewController {
      // Can be refactored to an extension on UIImage
      func animate(imageView: UIImageView, images: [UIImage]) {
      imageView.animationImages = images
-     imageView.animationDuration = 2.0
-     imageView.animationRepeatCount = 1
+     imageView.animationDuration = 0.5
+     imageView.animationRepeatCount = 3
      imageView.startAnimating()
      }
-     
-     //func shoryukenButtonTapped() {
-     //animate(imageView: dadoDinamico, images: diceImages)}
-     
+    
     
     
     @IBAction func diceShake(_ sender: UIButton) {
         animate(imageView: dadoDinamico, images: diceImages)
         animate(imageView: dadoDinamico2, images: diceImages)
+        generateRandomDices()
     }
+    
+    
     
      // @IBAction func rollPressed(_ sender: UIButton) {
      //  generateRandomDices()
     //shoryukenButtonTapped()}
     
      
-     /*func generateRandomDices(){
-     
+     func generateRandomDices(){
      randomDiceIndexLeft = Int.random(in: 1..<(7))
      randomDiceIndexRight = Int.random(in: 1..<(7))
-     imageViewDiceLeft.image = UIImage ( named: "dice\(randomDiceIndexLeft)")
-     imageViewDiceRight.image = UIImage ( named: "dice\(randomDiceIndexRight)")
-     }*/
+     dadoDinamico.image = UIImage ( named: "dice\(randomDiceIndexLeft)")
+     dadoDinamico2.image = UIImage ( named: "dice\(randomDiceIndexRight)")
+     }
 }
 
