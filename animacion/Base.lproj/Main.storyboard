@@ -18,38 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cube" translatesAutoresizingMaskIntoConstraints="NO" id="uuD-Z2-MYA">
-                                <rect key="frame" x="-134" y="0.0" width="643" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cube" translatesAutoresizingMaskIntoConstraints="NO" id="uuD-Z2-MYA">
+                                <rect key="frame" x="-50" y="0.0" width="643" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CasinoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pZe-gh-aAw">
-                                <rect key="frame" x="76" y="90" width="223" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="2SS-V8-I2d"/>
-                                    <constraint firstAttribute="width" secondItem="pZe-gh-aAw" secondAttribute="height" multiplier="143:128" id="4nh-aq-mgv"/>
-                                    <constraint firstAttribute="height" constant="200" id="TYs-Ls-wMV"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CasinoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pZe-gh-aAw">
+                                <rect key="frame" x="75" y="20" width="225" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="iW7-Hm-ywh">
-                                <rect key="frame" x="125" y="390" width="125" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="VTp-QX-sRh">
+                                <rect key="frame" x="100" y="296" width="175" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="Tgf-S1-J9P">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="262-9y-F7o"/>
-                                            <constraint firstAttribute="width" constant="50" id="gLH-xk-0XB"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-WA-rfR">
-                                        <rect key="frame" x="75" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="eGQ-Qz-X2l"/>
-                                            <constraint firstAttribute="width" constant="50" id="ykW-50-lfu"/>
-                                        </constraints>
+                                        <rect key="frame" x="100" y="0.0" width="75" height="75"/>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="DmV-bj-fZc"/>
+                                    <constraint firstAttribute="height" constant="75" id="YsV-0B-GZf"/>
+                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY3-nX-cXA">
-                                <rect key="frame" x="103.5" y="555" width="168" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY3-nX-cXA">
+                                <rect key="frame" x="103" y="570" width="168" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                 <state key="normal" title="Tira los dados">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,16 +55,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pZe-gh-aAw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="0Fq-Ol-aWE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cY3-nX-cXA" secondAttribute="bottom" constant="65" id="0XG-XR-jK6"/>
-                            <constraint firstItem="uuD-Z2-MYA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4fE-Wk-TNu"/>
-                            <constraint firstItem="uuD-Z2-MYA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BUc-39-xPX"/>
-                            <constraint firstItem="pZe-gh-aAw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oov-fa-Hmh"/>
-                            <constraint firstItem="iW7-Hm-ywh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R0x-v3-BVo"/>
-                            <constraint firstItem="uuD-Z2-MYA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W33-ps-TWk"/>
-                            <constraint firstItem="cY3-nX-cXA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g3h-5a-2Wm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uuD-Z2-MYA" secondAttribute="bottom" id="w9P-u4-We4"/>
-                            <constraint firstItem="iW7-Hm-ywh" firstAttribute="top" secondItem="pZe-gh-aAw" secondAttribute="bottom" constant="100" id="xEx-IC-5Id"/>
+                            <constraint firstItem="VTp-QX-sRh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4XF-23-eoA"/>
+                            <constraint firstItem="VTp-QX-sRh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VGR-2e-VUt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

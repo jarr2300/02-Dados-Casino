@@ -10,12 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // @IBOutlet weak var imageViewDiceLeft: UIImageView!
-    // @IBOutlet weak var imageViewDiceRight: UIImageView!
-    
-    
-    //   @IBOutlet weak var ryuImageView: UIImageView!
-    
     @IBOutlet weak var dadoDinamico: UIImageView!
     
     @IBOutlet weak var dadoDinamico2: UIImageView!
@@ -53,7 +47,7 @@ class ViewController: UIViewController {
      func animate(imageView: UIImageView, images: [UIImage]) {
      imageView.animationImages = images
      imageView.animationDuration = 0.5
-     imageView.animationRepeatCount = 3
+     imageView.animationRepeatCount = 2
      imageView.startAnimating()
      }
     
@@ -64,12 +58,6 @@ class ViewController: UIViewController {
         animate(imageView: dadoDinamico2, images: diceImages)
         generateRandomDices()
     }
-    
-    
-    
-     // @IBAction func rollPressed(_ sender: UIButton) {
-     //  generateRandomDices()
-    //shoryukenButtonTapped()}
     
      
      func generateRandomDices(){
