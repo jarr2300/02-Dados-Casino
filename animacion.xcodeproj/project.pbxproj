@@ -101,6 +101,7 @@
 			children = (
 				1E00E2EB21CE9BA6004F91AA /* AppDelegate.swift */,
 				1E00E2ED21CE9BA6004F91AA /* ViewController.swift */,
+				9AF5FC0C21CFE29B007DE417 /* New Group */,
 				1E00E2EF21CE9BA6004F91AA /* Main.storyboard */,
 				1E00E2F521CE9BA7004F91AA /* Assets.xcassets */,
 				1E00E2F721CE9BA7004F91AA /* LaunchScreen.storyboard */,
@@ -126,6 +127,13 @@
 				1E00E31021CE9BA7004F91AA /* Info.plist */,
 			);
 			path = animacionUITests;
+			sourceTree = "<group>";
+		};
+		9AF5FC0C21CFE29B007DE417 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

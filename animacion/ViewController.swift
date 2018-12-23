@@ -16,24 +16,27 @@ class ViewController: UIViewController {
     
     var randomDiceIndexLeft : Int = 0
     var randomDiceIndexRight: Int = 0
-    var diceImages: [UIImage] = []
-    
-    
-    //let diceImages = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
-    
-    
-    
+    //var diceImages: [UIImage] = []
+    var diceImages: [UIImage] = [#imageLiteral(resourceName: "dice1.png"),#imageLiteral(resourceName: "dice2.png"),#imageLiteral(resourceName: "dice3.png"),#imageLiteral(resourceName: "dice4.png"),#imageLiteral(resourceName: "dice5.png"),#imageLiteral(resourceName: "dice6.png")]
+    var numeroDeImagenes : Int
+
+    required init?(coder aDecoder: NSCoder) {
+        numeroDeImagenes = diceImages.count // Hay que inicializar el valor del número de elementos del Arrayde imagenes
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        diceImages = createImageArray(total: 6, imagePrefix: "dice")
-        generateRandomDices()
+        generateRandomDices() // genera que los dados no empiecen siempre con el mismo valor
     }
     
+    // var prueba : [UIImage] = [#imageLiteral(resourceName: "dice5"),#imageLiteral(resourceName: "dice4")]
+    
+    //var imageArray: [UIImage] = [#imageLiteral(resourceName: "dice1.png"),#imageLiteral(resourceName: "dice2.png"),#imageLiteral(resourceName: "dice3.png"),#imageLiteral(resourceName: "dice4.png"),#imageLiteral(resourceName: "dice5.png"),#imageLiteral(resourceName: "dice6.png")]
+    
+    
+    /*
     func createImageArray(total: Int, imagePrefix: String) -> [UIImage] {
-     
-     var imageArray: [UIImage] = []
      
      for imageCount in 0..<total {
      let imageName = "\(imagePrefix)\(imageCount+1)"
@@ -42,8 +45,10 @@ class ViewController: UIViewController {
      }
      return imageArray
      }
-     
-     // Can be refactored to an extension on UIImage
+     */
+        
+        
+     // Animación del Array del Objeto ( el dado ) y Array de imagenes ( en este caso diceImages)
      func animate(imageView: UIImageView, images: [UIImage]) {
      imageView.animationImages = images
      imageView.animationDuration = 0.5
@@ -61,10 +66,13 @@ class ViewController: UIViewController {
     
      
      func generateRandomDices(){
-     randomDiceIndexLeft = Int.random(in: 1..<(7))
-     randomDiceIndexRight = Int.random(in: 1..<(7))
-     dadoDinamico.image = UIImage ( named: "dice\(randomDiceIndexLeft)")
-     dadoDinamico2.image = UIImage ( named: "dice\(randomDiceIndexRight)")
+        randomDiceIndexLeft = Int.random(in: 1...numeroDeImagenes)  // genera un número aleatorio para cada dado
+        randomDiceIndexRight = Int.random(in: 1...numeroDeImagenes) //
+        //dadoDinamico.image = UIImage ( named: "dice\(randomDiceIndexLeft)")
+        //dadoDinamico2.image = UIImage ( named: "dice\(randomDiceIndexRight)")
+        
+        dadoDinamico.image = diceImages[randomDiceIndexLeft]    // Muestra la imagen del Array
+        dadoDinamico2.image = diceImages[randomDiceIndexRight]  // en la posición obtenida
      }
 }
 
