@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        generateRandomDices() // genera que los dados no empiecen siempre con el mismo valor
+        //generateRandomDices() // genera que los dados no empiecen siempre con el mismo valor
     }
     
     // var prueba : [UIImage] = [#imageLiteral(resourceName: "dice5"),#imageLiteral(resourceName: "dice4")]
@@ -58,6 +58,21 @@ class ViewController: UIViewController {
      imageView.animationDuration = 0.5
      imageView.animationRepeatCount = 2
      imageView.startAnimating()
+        
+        UIView.animate(withDuration: 1.2,
+                       delay: 0,
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: {
+                        self.dadoDinamico.transform = CGAffineTransform(scaleX: 0.5, y: 0.5 ).concatenating(CGAffineTransform(rotationAngle: 360)).concatenating(CGAffineTransform(translationX: -25, y: 20))
+        })
+        
+        UIView.animate(withDuration: 1.2,
+                       delay: 0,
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: {
+                        self.dadoDinamico2.transform = CGAffineTransform(scaleX: 0.5, y: 0.5).concatenating(CGAffineTransform(rotationAngle: -360)).concatenating(CGAffineTransform(translationX: 25, y: 20))
+        })
+        
      }
     
     func conteoIzquierdo (izq: Int) {
@@ -103,7 +118,7 @@ class ViewController: UIViewController {
     
     @IBAction func diceShake(_ sender: UIButton) {
         
-        print("Se pulsa el boton \(n) veces")
+        //print("Se pulsa el boton \(n) veces")
         animate(imageView: dadoDinamico, images: diceImages)
         animate(imageView: dadoDinamico2, images: diceImages)
         generateRandomDices()
@@ -111,6 +126,8 @@ class ViewController: UIViewController {
         conteoDerecho (der: (randomDiceIndexRight+1))
         print("\(contadorIzquierdo)")
         print("\(contadorDerecho)")
+        self.dadoDinamico.transform = CGAffineTransform.identity
+        self.dadoDinamico2.transform = CGAffineTransform.identity
     }
     
      
@@ -122,8 +139,11 @@ class ViewController: UIViewController {
         //dadoDinamico2.image = UIImage ( named: "dice\(randomDiceIndexRight)")
         print("Izquierdo : \(randomDiceIndexLeft+1)")
         print("Derecho : \(randomDiceIndexRight+1)")
+        
         dadoDinamico.image = diceImages[randomDiceIndexLeft]    // Muestra la imagen del Array
         dadoDinamico2.image = diceImages[randomDiceIndexRight]  // en la posición obtenida
+        
+        
         
     }
 }
