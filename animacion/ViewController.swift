@@ -34,22 +34,6 @@ class ViewController: UIViewController {
         //generateRandomDices() // genera que los dados no empiecen siempre con el mismo valor
     }
     
-    // var prueba : [UIImage] = [#imageLiteral(resourceName: "dice5"),#imageLiteral(resourceName: "dice4")]
-    
-    //var imageArray: [UIImage] = [#imageLiteral(resourceName: "dice1.png"),#imageLiteral(resourceName: "dice2.png"),#imageLiteral(resourceName: "dice3.png"),#imageLiteral(resourceName: "dice4.png"),#imageLiteral(resourceName: "dice5.png"),#imageLiteral(resourceName: "dice6.png")]
-    
-    
-    /*
-    func createImageArray(total: Int, imagePrefix: String) -> [UIImage] {
-     
-     for imageCount in 0..<total {
-     let imageName = "\(imagePrefix)\(imageCount+1)"
-     let image = UIImage(named: imageName)!
-     imageArray.append(image)
-     }
-     return imageArray
-     }
-     */
         
         
      // Animación del Array del Objeto ( el dado ) y Array de imagenes ( en este caso diceImages)
@@ -118,14 +102,12 @@ class ViewController: UIViewController {
     
     @IBAction func diceShake(_ sender: UIButton) {
         
-        //print("Se pulsa el boton \(n) veces")
-        animate(imageView: dadoDinamico, images: diceImages)
-        animate(imageView: dadoDinamico2, images: diceImages)
+
         generateRandomDices()
-        conteoIzquierdo (izq: (randomDiceIndexLeft+1))
-        conteoDerecho (der: (randomDiceIndexRight+1))
-        print("\(contadorIzquierdo)")
-        print("\(contadorDerecho)")
+        //conteoIzquierdo (izq: (randomDiceIndexLeft+1))
+        //conteoDerecho (der: (randomDiceIndexRight+1))
+        //print("\(contadorIzquierdo)")
+        //print("\(contadorDerecho)")
         self.dadoDinamico.transform = CGAffineTransform.identity
         self.dadoDinamico2.transform = CGAffineTransform.identity
     }
@@ -135,16 +117,36 @@ class ViewController: UIViewController {
         randomDiceIndexLeft =  Int.random(in: 0..<numeroDeImagenes)  // genera un número aleatorio para cada dado
         randomDiceIndexRight = Int.random(in: 0..<numeroDeImagenes) //
         
+        
+        animate(imageView: dadoDinamico, images: diceImages)
+        animate(imageView: dadoDinamico2, images: diceImages)
+        
+        
         //dadoDinamico.image = UIImage ( named: "dice\(randomDiceIndexLeft)")
         //dadoDinamico2.image = UIImage ( named: "dice\(randomDiceIndexRight)")
-        print("Izquierdo : \(randomDiceIndexLeft+1)")
-        print("Derecho : \(randomDiceIndexRight+1)")
+        //print("Izquierdo : \(randomDiceIndexLeft+1)")
+        //print("Derecho : \(randomDiceIndexRight+1)")
+        
+        self.dadoDinamico.transform = CGAffineTransform.identity
+        self.dadoDinamico2.transform = CGAffineTransform.identity
         
         dadoDinamico.image = diceImages[randomDiceIndexLeft]    // Muestra la imagen del Array
         dadoDinamico2.image = diceImages[randomDiceIndexRight]  // en la posición obtenida
         
-        
-        
     }
+    
+    
+    
+    
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            generateRandomDices()
+        }
+    }
+    
+    
 }
 
