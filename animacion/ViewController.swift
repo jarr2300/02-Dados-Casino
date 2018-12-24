@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var dadoDinamico2: UIImageView!
     
+    @IBOutlet weak var resultado: UILabel!
+    
     var randomDiceIndexLeft : Int = 0
     var randomDiceIndexRight: Int = 0
     //var diceImages: [UIImage] = []
@@ -64,7 +66,7 @@ class ViewController: UIViewController {
         switch local {
         
         case 1:
-            //self.n = n + 1
+            
             contadorIzquierdo[0] += 1
         case 2:
             contadorIzquierdo[1] += 1
@@ -117,7 +119,7 @@ class ViewController: UIViewController {
         randomDiceIndexLeft =  Int.random(in: 0..<numeroDeImagenes)  // genera un número aleatorio para cada dado
         randomDiceIndexRight = Int.random(in: 0..<numeroDeImagenes) //
         
-        
+        n = randomDiceIndexLeft+randomDiceIndexRight+2
         animate(imageView: dadoDinamico, images: diceImages)
         animate(imageView: dadoDinamico2, images: diceImages)
         
@@ -132,6 +134,10 @@ class ViewController: UIViewController {
         
         dadoDinamico.image = diceImages[randomDiceIndexLeft]    // Muestra la imagen del Array
         dadoDinamico2.image = diceImages[randomDiceIndexRight]  // en la posición obtenida
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1 ) {
+        self.resultado.text = "\(self.n)"
+        }
         
     }
     

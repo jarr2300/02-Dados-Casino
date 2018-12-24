@@ -52,17 +52,35 @@
                                     <action selector="diceShake:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q46-6B-wzy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-KW-PU3">
+                                <rect key="frame" x="173" y="245" width="29" height="56"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="2">
+                                        <attributes>
+                                            <color key="NSColor" red="0.65305213730569944" green="0.035900445407352773" blue="0.035930152860418646" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="40" name="AvenirNext-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="1"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VTp-QX-sRh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4XF-23-eoA"/>
+                            <constraint firstItem="gTs-KW-PU3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jod-HX-fNc"/>
                             <constraint firstItem="VTp-QX-sRh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VGR-2e-VUt"/>
+                            <constraint firstItem="gTs-KW-PU3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="225" id="hHH-vK-TEv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="dadoDinamico" destination="Tgf-S1-J9P" id="7xW-9b-IJK"/>
                         <outlet property="dadoDinamico2" destination="rbT-WA-rfR" id="I75-wq-7z6"/>
+                        <outlet property="resultado" destination="gTs-KW-PU3" id="SHX-1U-TN6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
